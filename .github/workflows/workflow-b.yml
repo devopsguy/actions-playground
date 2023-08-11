@@ -1,0 +1,15 @@
+name: Workflow B
+
+on:
+  workflow_run:
+    workflows: [ "Workflow A" ]
+    types: [ "completed" ]
+
+jobs:
+  information:
+    name: Information Output
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Action Information
+        run: echo "Triggered by $GITHUB_EVENT_NAME"

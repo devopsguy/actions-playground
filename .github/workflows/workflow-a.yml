@@ -1,0 +1,15 @@
+name: Workflow A
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  information:
+    name: Information Output
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Action Information
+        run: echo "$GITHUB_ACTOR initiated the workflow on $GITHUB_REF_NAME using $GITHUB_SHA."
