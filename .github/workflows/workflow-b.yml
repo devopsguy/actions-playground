@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: [ "Workflow A" ]
     types: [ "completed" ]
+    branches: [ "main", "feature/*" ]
   workflow_dispatch:
 
 jobs:
