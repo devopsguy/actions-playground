@@ -15,6 +15,6 @@ jobs:
         run: echo "$GITHUB_ACTOR initiated the workflow on $GITHUB_REF_NAME using $GITHUB_SHA."
       - name: Set Value
         id: action-value
-        run: echo "foo=bar" >> "$GITHUB_ENV"
+        run: echo "package_version=$(cat version.json | jq -r '.version')" >> "$GITHUB_ENV"
       - name: Print Value
-        run: echo $foo
+        run: echo $package_version
