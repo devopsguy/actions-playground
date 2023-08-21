@@ -13,3 +13,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Action Information
         run: echo "$GITHUB_ACTOR initiated the workflow on $GITHUB_REF_NAME using $GITHUB_SHA."
+      - name: Set Value
+        id: action-value
+        run: echo "foo=bar"
+      - name: Print Value
+        run: echo ${{ steps.action-value.outputs.foo }}
